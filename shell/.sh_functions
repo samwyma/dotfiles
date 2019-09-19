@@ -1,0 +1,12 @@
+
+iplayer() {
+  get_iplayer $1 --pid-recursive --force --output ~/Radio/
+}
+
+decrypt-image() {
+  pass show $1 | base64 -d | display
+}
+
+port-in-use() {
+  lsof -i :$1
+}
