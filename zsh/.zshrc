@@ -14,6 +14,10 @@ compinit
 autoload -U add-zsh-hook
 add-zsh-hook chpwd node-version
 
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
 ### sources
 source ~/.zsh_plugins
 source ~/.sh_aliases
@@ -114,3 +118,5 @@ export SPACESHIP_AWS_COLOR=red
 
 # profiler
 #zprof
+# fnm
+eval "$(fnm env --multi)"
