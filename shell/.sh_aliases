@@ -26,6 +26,7 @@ alias vsc='code .'
 alias zshrc='code ~/.zshrc'
 
 # kubectl
+alias k='kubectl'
 alias kcuc='kubectl config use-context'
 alias kcsc='kubectl config set-context'
 alias kcdc='kubectl config delete-context'
