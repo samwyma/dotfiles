@@ -10,3 +10,13 @@ decrypt-image() {
 port-in-use() {
   lsof -i :$1
 }
+
+kdebug() { 
+  kubectl run \
+    -i \
+    --rm \
+    --tty \
+    debug \
+    --image=busybox \
+    --restart=Never -- sh
+}
