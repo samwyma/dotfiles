@@ -3,6 +3,10 @@
 # profiler
 #zmodload zsh/zprof
 
+source ~/.sh_settings
+source ~/.sh_aliases
+source ~/.sh_functions
+
 antibody bundle <~/.zsh_plugins.txt >~/.zsh_plugins
 
 ### oh-my-zsh plugins pre-reqs
@@ -18,17 +22,12 @@ export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
-### sources
 source ~/.zsh_plugins
-source ~/.sh_aliases
-source ~/.sh_functions
-source ~/.sh_settings
 source ~/.sh_work
-[ -f ~/.reformrc ] && source ~/.reformrc
 
 ### completions
-if [ ! -f "/usr/local/share/zsh/site-functions/_gopass" ]; then
-    gopass completion zsh | sudo tee /usr/local/share/zsh/site-functions/_gopass
+if [ ! -f "/usr/share/zsh/site-functions/_gopass" ]; then
+    gopass completion zsh | sudo tee /usr/share/zsh/site-functions/_gopass
 fi
 
 ### key bindings
@@ -118,5 +117,3 @@ export SPACESHIP_AWS_COLOR=red
 
 # profiler
 #zprof
-# fnm
-eval "$(fnm env --multi)"
