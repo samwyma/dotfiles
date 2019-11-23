@@ -4,24 +4,27 @@
 #zmodload zsh/zprof
 
 source ~/.sh_settings
-source ~/.sh_aliases
-source ~/.sh_functions
 
+### plugin manager
 antibody bundle <~/.zsh_plugins.txt >~/.zsh_plugins
 
-### oh-my-zsh plugins pre-reqs
+### oh-my-zsh plugins dependencies / requirements
 export ZSH_CACHE_DIR=~/.zsh/cache
 mkdir -p $ZSH_CACHE_DIR
 autoload -Uz compinit
 compinit
 
+### hooks
 autoload -U add-zsh-hook
 add-zsh-hook chpwd node-version
 
+### gpg / yubikey
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
+source ~/.sh_aliases
+source ~/.sh_functions
 source ~/.zsh_plugins
 source ~/.sh_work
 
@@ -42,16 +45,17 @@ setopt appendhistory
 setopt share_history
 setopt incappendhistory
 
+### python
 if [ -x "$(command -v pyenv)" ]; then
     eval "$(pyenv init -)"
 fi
 
+### node
 if [ -x "$(command -v fnm)" ]; then
     eval "$(fnm env --multi)"
 fi
 
-### lazy loading
-
+### lazy loading completions
 kubectl() {
     if ! type __start_kubectl >/dev/null 2>&1; then
         source <(command kubectl completion zsh)
@@ -75,7 +79,6 @@ node-version() {
 }
 
 ### spaceship
-
 export SPACESHIP_PROMPT_ORDER=(
     user # Username section
     host # Hostname section
