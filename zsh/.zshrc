@@ -41,6 +41,7 @@ bindkey "${terminfo[kdch1]}" delete-char
 ### history
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
+SAVEHIST=1000
 setopt appendhistory
 setopt share_history
 setopt incappendhistory
