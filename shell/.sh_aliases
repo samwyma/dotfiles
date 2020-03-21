@@ -36,8 +36,8 @@ if [[ $(uname) == "Darwin" ]]; then
     alias restart='sudo systemsetup -setrestartfreeze on'
     alias rga='~/.wakeup'
 
-    alias mount-server-files='sshfs server.rb.kohi.uk:/mnt/files ~/Server/files'
-    alias mount-server-videos='sshfs server.rb.kohi.uk:/mnt/videos ~/Server/videos'
+    alias mount-server-files='sshfs pi4.rb.kohi.uk:/mnt/files ~/Server/files'
+    alias mount-server-videos='sshfs xu4.rb.kohi.uk:/mnt/videos ~/Server/videos'
 fi
 
 if [[ $(uname) == "Linux" ]]; then
