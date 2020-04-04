@@ -28,11 +28,6 @@ source ~/.sh_functions
 source ~/.zsh_plugins
 source ~/.sh_work
 
-### completions
-if [ ! -f "/usr/share/zsh/site-functions/_gopass" ]; then
-    gopass completion zsh | sudo tee /usr/share/zsh/site-functions/_gopass
-fi
-
 ### key bindings
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
@@ -81,17 +76,17 @@ node-version() {
 
 ### spaceship
 export SPACESHIP_PROMPT_ORDER=(
-    user # Username section
-    host # Hostname section
-    dir # Current directory section
-    git # Git section (git_branch + git_status)
-    node # Node.js section
-    pyenv # Pyenv section
-    aws # Amazon Web Services section
+    user      # Username section
+    host      # Hostname section
+    dir       # Current directory section
+    git       # Git section (git_branch + git_status)
+    node      # Node.js section
+    pyenv     # Pyenv section
+    aws       # Amazon Web Services section
     exec_time # Execution time
-    line_sep # Line break
+    line_sep  # Line break
     exit_code # Exit code section
-    char # Prompt character
+    char      # Prompt character
 )
 
 # prompt
