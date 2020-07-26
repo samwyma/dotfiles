@@ -32,6 +32,8 @@ source ~/.sh_work
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 bindkey "${terminfo[kdch1]}" delete-char
+bindkey -v
+bindkey '^R' history-incremental-search-backward
 
 ### history
 HISTFILE=~/.zsh_history
