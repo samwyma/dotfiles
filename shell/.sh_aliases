@@ -54,3 +54,28 @@ if [[ $(uname) == "Linux" ]]; then
 
     alias rga='sudo /usr/lib/systemd/system-sleep/gpg-agent.sh'
 fi
+
+# readlink
+alias readlink=greadlink
+
+# ssh tunnels
+docker_psql="docker run -v ~/.pgpass:/root/.pgpass -it --rm --network host postgres:9 psql -h docker.for.mac.host.internal -U ltgis ukgis"
+alias mongo_prod="echo 'About to serve landdb on port 27000' && ssh -L 27000:ec2-34-254-190-68.eu-west-1.compute.amazonaws.com:27017 jumpbox -N"
+alias postgres_prod="echo 'Connecting to prod postgres. Connect using $docker_psql' && ssh -L 5432:postgis-5-prod.cblsxmfiejdk.eu-west-1.rds.amazonaws.com:5432 jumpbox -N"
+alias policy_hub_postgres_prod="echo 'Connecting to policy hub. Connect using $docker_psql' && ssh -L 5432:postgis-policy-hub-2.cblsxmfiejdk.eu-west-1.rds.amazonaws.com:5432 jumpbox -N"
+alias segment_postgres_prod="ssh -L 5432:segment-warehouse.cblsxmfiejdk.eu-west-1.rds.amazonaws.com:5432 jumpbox -N"
+alias mongo_planning_prod="echo 'About to serve planning_db on port 27001' && ssh -L 27001:ec2-63-35-196-164.eu-west-1.compute.amazonaws.com:27017 jumpbox -N"
+alias policy_data_hub="echo 'Tunnelling port 22 to local port 3022. Run ssh -i ~/.ssh/production ubuntu@localhost -p 3022 to ssh into box' && ssh -L 3022:ec2-54-229-149-166.eu-west-1.compute.amazonaws.com:22 jumpbox -N"
+
+# aws profiles
+alias assume-prod-admin="unset AWS_PROFILE && aws-assume-role --profile default --account production --role administrator && export AWS_PROFILE=production"
+alias assume-prod-engineer="unset AWS_PROFILE && aws-assume-role --profile default --account production --role engineer && export AWS_PROFILE=production"
+alias assume-staging-admin="unset AWS_PROFILE && aws-assume-role --profile default --account staging --role administrator --duration-hours 12 && export AWS_PROFILE=staging"
+alias assume-sandbox-admin="unset AWS_PROFILE && aws-assume-role --profile default --account sandbox --role administrator --duration-hours 12 && export AWS_PROFILE=sandbox"
+
+# sandbox k8
+alias install-sandbox-k8-user="assume-sandbox-admin && $HOME/LandTech/k8-cluster/cluster_scripts/install_kube_iam_user.sh  --cluster k8.sandbox.landinsight.io --aws-profile sandbox"
+
+alias zoom='echo ":woman-running: :woman-running: :woman-running: :woman-running: :woman-running: :woman-running: :woman-running: :woman-running: :woman-running: :woman-running:" | pbcopy'
+
+alias psql="docker run -v ~/.pgpass:/root/.pgpass -it --rm --network host postgres:9 psql"
