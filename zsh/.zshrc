@@ -26,7 +26,7 @@ gpgconf --launch gpg-agent
 source ~/.sh_aliases
 source ~/.sh_functions
 source ~/.zsh_plugins
-source ~/.sh_work
+# source ~/.sh_work
 
 ### key bindings
 bindkey "${terminfo[khome]}" beginning-of-line
@@ -118,3 +118,6 @@ export SPACESHIP_AWS_COLOR=red
 
 # profiler
 #zprof
+
+# Ensure the terminal isn't fucked
+set -o emacs
