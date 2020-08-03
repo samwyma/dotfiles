@@ -9,3 +9,5 @@ PATH="./node_modules/.bin:$PATH"
 export PATH
 
 export EDITOR="code --wait"
+
+export LC_CTYPE=C
