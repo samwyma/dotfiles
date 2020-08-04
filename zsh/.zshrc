@@ -121,3 +121,5 @@ export SPACESHIP_AWS_COLOR=red
 
 # Ensure the terminal isn't fucked
 set -o emacs
+
+setopt shwordsplit
