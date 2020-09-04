@@ -77,4 +77,6 @@ alias install-sandbox-k8-user="assume-sandbox-admin && $HOME/LandTech/k8-cluster
 
 alias zoom='echo ":woman-running: :woman-running: :woman-running: :woman-running: :woman-running: :woman-running: :woman-running: :woman-running: :woman-running: :woman-running:" | pbcopy'
 
+alias pairing='echo ":pear: :pear: :pear: :pear: :pear: :pear: :pear: :pear: :pear: :pear:" | pbcopy'
+
 alias psql="docker run -v ~/.pgpass:/root/.pgpass -it --rm --network host postgres:9 psql"
