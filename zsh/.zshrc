@@ -4,6 +4,7 @@
 #zmodload zsh/zprof
 
 source ~/.sh_settings
+source $HOME/.reformrc
 
 ### plugin manager
 antibody bundle <~/.zsh_plugins.txt >~/.zsh_plugins
@@ -90,6 +91,9 @@ export SPACESHIP_PROMPT_ORDER=(
     exit_code # Exit code section
     char      # Prompt character
 )
+
+# Autosuggest
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
 # prompt
 export SPACESHIP_CHAR_SYMBOL="❯"

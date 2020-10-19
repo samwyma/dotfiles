@@ -4,7 +4,6 @@ robbyrussell/oh-my-zsh path:plugins/gpg-agent
 Tarrasch/zsh-bd
 
 zsh-users/zsh-completions
-zsh-users/zsh-autosuggestions branch:develop
 zsh-users/zsh-syntax-highlighting
 
 denysdovhan/spaceship-prompt
