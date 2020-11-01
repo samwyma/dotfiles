@@ -51,7 +51,7 @@ fi
 
 ### node
 if [ -x "$(command -v fnm)" ]; then
-    eval "$(fnm env --multi)"
+    eval "$(fnm env)"
 fi
 
 ### lazy loading completions
