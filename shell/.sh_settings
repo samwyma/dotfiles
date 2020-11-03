@@ -11,3 +11,5 @@ export PATH
 export EDITOR="code --wait"
 
 export LC_CTYPE=C
+
+export LC_ALL="en_US.UTF-8"
