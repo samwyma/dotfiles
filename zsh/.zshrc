@@ -19,10 +19,10 @@ compinit
 autoload -U add-zsh-hook
 add-zsh-hook chpwd node-version
 
-### gpg / yubikey
-export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
+# ### gpg / yubikey
+# export GPG_TTY="$(tty)"
+# export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+# gpgconf --launch gpg-agent
 
 source ~/.sh_aliases
 source ~/.sh_functions

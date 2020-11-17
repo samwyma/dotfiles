@@ -54,10 +54,10 @@ source "$HOME/.sh_settings"
 
 [ -r "$HOME/.homesick/repos/homeshick/homeshick.sh" ] && source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
-# ssh via gpg
-export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
-gpg-connect-agent updatestartuptty /bye > /dev/null
+# # ssh via gpg
+# export GPG_TTY="$(tty)"
+# export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
+# gpg-connect-agent updatestartuptty /bye > /dev/null
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
