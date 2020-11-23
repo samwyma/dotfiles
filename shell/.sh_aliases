@@ -10,7 +10,7 @@ alias public='cd ~/dev/public'
 alias work='cd ~/dev/work'
 
 # colour
-alias ll='ls -alF'
+alias ll='ls -ahlF'
 
 # git
 alias g='git'
