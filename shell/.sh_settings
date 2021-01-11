@@ -13,3 +13,8 @@ export EDITOR="code --wait"
 export LC_CTYPE=C
 
 export LC_ALL="en_US.UTF-8"
+
+# AWS-Vault environment variables
+export AWS_VAULT_PROMPT="terminal"
+export AWS_VAULT_KEYCHAIN_NAME="login"
+export AWS_ASSUME_ROLE_TTL=45m 
