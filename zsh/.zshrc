@@ -3,6 +3,10 @@
 # profiler
 #zmodload zsh/zprof
 
+if [ -f ~/.sh_tokens ]; then
+    source ~/.sh_tokens
+fi
+
 source ~/.sh_settings
 source $HOME/.reformrc
 
