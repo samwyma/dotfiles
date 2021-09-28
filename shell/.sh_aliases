@@ -80,7 +80,3 @@ alias zoom='echo ":woman-running: :woman-running: :woman-running: :woman-running
 alias pairing='echo ":pear: :pear: :pear: :pear: :pear: :pear: :pear: :pear: :pear: :pear:" | pbcopy'
 
 touch ~/.psql_history
-
-alias psql="docker run -v ~/.pgpass:/root/.pgpass -v ~/.psql_history:/root/.psql_history -it --rm --network host postgres psql"
-alias psql_ni="docker run -v ~/.pgpass:/root/.pgpass -v ~/.psql_history:/root/.psql_history --rm --network host postgres psql"
-alias pg_dump="docker run -v ~/.pgpass:/root/.pgpass -v ~/.psql_history:/root/.psql_history -it --rm --network host postgres pg_dump"
