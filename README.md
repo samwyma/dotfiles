@@ -15,5 +15,5 @@ git checkout git@github.com:samwyma/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 
 stow [folder-names]
-stow bash hyper npm shell tmux vim zsh
+stow bash hyper shell tmux vim zsh
 ```
