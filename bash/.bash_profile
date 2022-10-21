@@ -8,6 +8,7 @@ fi
 
 # set PATH so it includes user's private bin directories
 export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.npm-global/bin:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
 
 # Include ./.aws/aws_profile if it exists
 if [[ -f /home/rob/.aws/aws_profile ]]; then
