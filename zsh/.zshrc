@@ -137,3 +137,6 @@ if [ -f '/Users/samwyma/.bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sa
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/samwyma/.bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/samwyma/.bin/google-cloud-sdk/completion.zsh.inc'; fi
+
+alias python=/usr/local/bin/python3
+alias pip=/usr/local/bin/pip3
