@@ -6,6 +6,7 @@ PATH="$HOME/.bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.npm-global/bin:$PATH"
 PATH="./node_modules/.bin:$PATH"
+PATH="$PATH:/usr/local/opt/libpq/bin"
 export PATH
 
 export EDITOR="code --wait"
