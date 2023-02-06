@@ -7,6 +7,9 @@ PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.npm-global/bin:$PATH"
 PATH="./node_modules/.bin:$PATH"
 PATH="$PATH:/usr/local/opt/libpq/bin"
+# Installed from http://www.kyngchaos.com/software/archive/gdal-complete/
+# Can also do it through homebrew
+PATH="$PATH:/Library/Frameworks/GDAL.framework/Versions/Current/Programs"
 export PATH
 
 export EDITOR="code --wait"
