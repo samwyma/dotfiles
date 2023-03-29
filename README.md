@@ -5,8 +5,7 @@ GNU `stow` for managing symlinks and `git` for source control. Simple!
 ## install
 
 - `brew install stow`
-- `sudo pacman -S stow`
-- ...etc
+- `brew install antibody`
 
 ## apply
 
