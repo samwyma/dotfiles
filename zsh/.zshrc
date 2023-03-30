@@ -96,7 +96,7 @@ export SPACESHIP_PROMPT_ORDER=(
     dir       # Current directory section
     git       # Git section (git_branch + git_status)
     node      # Node.js section
-    pyenv     # Pyenv section
+    python    # Pyenv section
     aws       # Amazon Web Services section
     exec_time # Execution time
     line_sep  # Line break
