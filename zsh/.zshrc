@@ -3,6 +3,10 @@
 # profiler
 #zmodload zsh/zprof
 
+# To remove warnings
+unset SPACESHIP_PYENV_SYMBOL
+unset SPACESHIP_PYENV_COLOR
+
 if [ -f ~/.sh_tokens ]; then
     source ~/.sh_tokens
 fi
@@ -110,7 +114,7 @@ export SPACESHIP_PROMPT_PREFIXES_SHOW=false
 
 # symbols
 export SPACESHIP_NODE_SYMBOL="node:"
-export SPACESHIP_PYENV_SYMBOL="python:"
+export SPACESHIP_PYTHON_SYMBOL="python:"
 export SPACESHIP_AWS_SYMBOL="aws:"
 
 # git
@@ -125,7 +129,7 @@ export SPACESHIP_GIT_BRANCH_COLOR="#424242"
 export SPACESHIP_GIT_STATUS_COLOR="#424242"
 export SPACESHIP_NODE_COLOR="#424242"
 export SPACESHIP_RUBY_COLOR="#424242"
-export SPACESHIP_PYENV_COLOR="#424242"
+export SPACESHIP_PYTHON_COLOR="#424242"
 export SPACESHIP_AWS_COLOR=red
 
 # profiler
