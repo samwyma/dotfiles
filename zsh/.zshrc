@@ -61,11 +61,6 @@ if [ -x "$(command -v pyenv)" ]; then
     eval "$(pyenv init -)"
 fi
 
-### node
-if [ -x "$(command -v fnm)" ]; then
-    eval "$(fnm env)"
-fi
-
 ### lazy loading completions
 kubectl() {
     if ! type __start_kubectl >/dev/null 2>&1; then
@@ -88,6 +83,12 @@ node-version() {
         fnm use
     fi
 }
+
+### node
+if [ -x "$(command -v fnm)" ]; then
+    eval "$(fnm env)"
+    node-version
+fi
 
 ### spaceship
 export SPACESHIP_PROMPT_ORDER=(
