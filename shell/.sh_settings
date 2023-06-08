@@ -22,3 +22,5 @@ export LC_ALL="en_US.UTF-8"
 export AWS_VAULT_PROMPT="terminal"
 export AWS_VAULT_KEYCHAIN_NAME="login"
 export AWS_ASSUME_ROLE_TTL=45m 
+
+export JAVA_HOME="$(/usr/libexec/java_home)"
