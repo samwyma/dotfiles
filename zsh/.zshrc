@@ -103,7 +103,7 @@ spaceship_graphite_trunk() {
     spaceship::section::v4 \
         --color "#32a852" \
         --prefix "$SPACESHIP_SECTION_PREFIX" \
-        --suffix "$SPACESHIP_SECTION_SUFFIX" \
+        --suffix "$SPACESHIP_PROMPT_DEFAULT_SUFFIX" \
         --symbol "$SPACESHIP_SECTION_SYMBOL" \
         "-> $trunk"
 }
