@@ -92,8 +92,11 @@ if [ -x "$(command -v fnm)" ]; then
 fi
 
 spaceship_graphite_trunk() {
-    trunk=$(gt trunk --no-interactive)
+    trunk=$(gt trunk --no-interactive || echo "")
     if [ -z "$trunk" ]; then
+        return
+    fi
+    if [[ "$trunk" == *"ERROR: "* ]]; then
         return
     fi
     branch=$(git rev-parse --abbrev-ref HEAD)
