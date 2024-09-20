@@ -2,11 +2,26 @@
 
 export CLICOLOR=YES
 
+SOURCE="$0"
+
+while [ -L "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  SCRIPT_DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
+  SOURCE=$(readlink "$SOURCE")
+  [[ $SOURCE != /* ]] && SOURCE=$SCRIPT_DIR/$SOURCE # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+SCRIPT_DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
+
 PATH="$HOME/.bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.npm-global/bin:$PATH"
 PATH="./node_modules/.bin:$PATH"
 PATH="$PATH:/usr/local/opt/libpq/bin"
+PATH="/usr/local/bin:$PATH"
+PATH="$HOME/.pyenv/shims:$PATH"
+PATH="$HOME/sdks/flutter/bin:$PATH"
+PATH="$HOME/.gem/bin:$PATH"
+PATH="$HOME/.pub-cache/bin:$PATH"
+PATH="$SCRIPT_DIR/../scripts:$PATH"
 # Installed from http://www.kyngchaos.com/software/archive/gdal-complete/
 # Can also do it through homebrew
 PATH="$PATH:/Library/Frameworks/GDAL.framework/Versions/Current/Programs"
@@ -23,4 +38,5 @@ export AWS_VAULT_PROMPT="terminal"
 export AWS_VAULT_KEYCHAIN_NAME="login"
 export AWS_ASSUME_ROLE_TTL=45m 
 
-export JAVA_HOME="$(/usr/libexec/java_home)"
+export MAPBOX_DOWNLOADS_TOKEN=sk.eyJ1IjoibWFhdmltYXJ0aW5leiIsImEiOiJjbHB0M253ODQwODVpMmxtbDZrYWU4eTlyIn0.MbRJ5cQv2k7vbnGWzQBPGw
+# export JAVA_HOME="$(/usr/libexec/java_home)"

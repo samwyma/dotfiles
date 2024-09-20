@@ -11,6 +11,7 @@ if [ -f ~/.sh_tokens ]; then
     source ~/.sh_tokens
 fi
 
+source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 source ~/.sh_settings
 source $HOME/.reformrc
 
@@ -19,7 +20,7 @@ if [ -f "/opt/homebrew/bin/brew" ]; then
 fi
 
 ### plugin manager
-antibody bundle <~/.zsh_plugins.txt >~/.zsh_plugins
+antidote bundle <~/.zsh_plugins.txt >~/.zsh_plugins
 
 ### oh-my-zsh plugins dependencies / requirements
 export ZSH_CACHE_DIR=~/.zsh/cache
@@ -90,12 +91,30 @@ if [ -x "$(command -v fnm)" ]; then
     node-version
 fi
 
+spaceship_graphite_trunk() {
+    trunk=$(gt trunk --no-interactive)
+    if [ -z "$trunk" ]; then
+        return
+    fi
+    branch=$(git rev-parse --abbrev-ref HEAD)
+    if [ "$branch" = "$trunk" ]; then
+        return
+    fi
+    spaceship::section::v4 \
+        --color "#32a852" \
+        --prefix "$SPACESHIP_SECTION_PREFIX" \
+        --suffix "$SPACESHIP_SECTION_SUFFIX" \
+        --symbol "$SPACESHIP_SECTION_SYMBOL" \
+        "-> $trunk"
+}
+
 ### spaceship
 export SPACESHIP_PROMPT_ORDER=(
     user      # Username section
     host      # Hostname section
     dir       # Current directory section
     git       # Git section (git_branch + git_status)
+    graphite_trunk
     node      # Node.js section
     python    # Pyenv section
     aws       # Amazon Web Services section
@@ -104,6 +123,8 @@ export SPACESHIP_PROMPT_ORDER=(
     exit_code # Exit code section
     char      # Prompt character
 )
+
+
 
 # Autosuggest
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
@@ -142,7 +163,7 @@ set -o emacs
 setopt shwordsplit
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/samwyma/.bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/samwyma/.bin/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/samuelwyma/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/samuelwyma/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/samwyma/.bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/samwyma/.bin/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/samuelwyma/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/samuelwyma/google-cloud-sdk/completion.zsh.inc'; fi
