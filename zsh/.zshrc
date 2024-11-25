@@ -83,6 +83,9 @@ node-version() {
     if [ -f "$(pwd)/.node-version" ]; then
         fnm use
     fi
+    if [ -f "$(pwd)/.nvmrc" ]; then
+        fnm use
+    fi
 }
 
 ### node
