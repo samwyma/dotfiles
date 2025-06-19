@@ -15,6 +15,7 @@ if [ -f "/opt/homebrew/bin/brew" ]; then
     source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 else
     # Assume we're in a linux machine
+    export PATH="$PATH:$HOME/.antidote"
     source "$HOME/.antidote/antidote.zsh"
 fi
 
