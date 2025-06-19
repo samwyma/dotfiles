@@ -79,4 +79,10 @@ alias zoom='echo ":woman-running: :woman-running: :woman-running: :woman-running
 
 alias pairing='echo ":pear: :pear: :pear: :pear: :pear: :pear: :pear: :pear: :pear: :pear:" | pbcopy'
 
+remote_host="ubuntu@198.244.177.34"
+
+alias rd="ssh $remote_host"
+
+alias rd_sync_claude="ssh $remote_host 'mkdir -p ~/.claude' && find ~/.claude -maxdepth 1 -type f -exec scp {} $remote_host:~/.claude/ \;"
+
 touch ~/.psql_history

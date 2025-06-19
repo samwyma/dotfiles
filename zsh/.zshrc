@@ -95,7 +95,7 @@ if [ -x "$(command -v fnm)" ]; then
 fi
 
 spaceship_graphite_trunk() {
-    trunk=$(gt trunk --no-interactive || echo "")
+    trunk=$(gt trunk --no-interactive 2>/dev/null || echo "")
     if [ -z "$trunk" ]; then
         return
     fi
@@ -173,3 +173,11 @@ if [ -f '/Users/samuelwyma/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/samu
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/samuelwyma/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/samuelwyma/google-cloud-sdk/completion.zsh.inc'; fi
+
+# pnpm
+export PNPM_HOME="/Users/samuelwyma/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

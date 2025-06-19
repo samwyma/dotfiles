@@ -23,6 +23,7 @@ PATH="$HOME/.gem/bin:$PATH"
 PATH="$HOME/.pub-cache/bin:$PATH"
 PATH="$SCRIPT_DIR/../scripts:$PATH"
 PATH="$PATH:/opt/homebrew/opt/libpq/bin:$PATH"
+PATH="$PATH:$HOME/sdks/apache-maven-3.9.9/bin"
 # Installed from http://www.kyngchaos.com/software/archive/gdal-complete/
 # Can also do it through homebrew
 PATH="$PATH:/Library/Frameworks/GDAL.framework/Versions/Current/Programs"
