@@ -11,7 +11,13 @@ if [ -f ~/.sh_tokens ]; then
     source ~/.sh_tokens
 fi
 
-source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+if [ -f "/opt/homebrew/bin/brew" ]; then
+    source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+else
+    # Assume we're in a linux machine
+    source "$HOME/.antidote/antidote.zsh"
+fi
+
 source ~/.sh_settings
 source $HOME/.reformrc
 
@@ -169,13 +175,13 @@ set -o emacs
 setopt shwordsplit
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/samuelwyma/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/samuelwyma/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/samuelwyma/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/samuelwyma/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
 # pnpm
-export PNPM_HOME="/Users/samuelwyma/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
